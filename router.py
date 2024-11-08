@@ -8,6 +8,6 @@ router = Router()
 async def process_messageeee(message: Message):
     if '/connect' in message.text:
         token = message.text.split()[1]
-        await connecting(token, router)
+        await connecting(token)
         await message.answer("Создание бота завершено")
     await message.answer(message.text)

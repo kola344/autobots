@@ -1,9 +1,11 @@
-from aiogram import Bot, Dispatcher
-from connect_bot import connect_bot
+from aiogram import Dispatcher, Bot
 
-bots = {"7852532479:AAHu3tlY4ogxsz0gsd1b6kN6CS3CCd2_7Zs": {}}
+dp = Dispatcher()
 
-async def connecting(token, router):
-    dp, bot = await connect_bot(token, router)
-    bots[token] = {"dp": dp, "bot": bot}
+bots = {}
+
+async def connecting(token):
+    bot = Bot(token)
+    bots[token] = bot
+    await bot.delete_webhook()
     await bot.set_webhook(url=f"https://svetlana-backend.onrender.com/webhook?bot_token={token}")
