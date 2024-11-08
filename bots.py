@@ -8,4 +8,4 @@ async def connect_bot(token):
     dp = Dispatcher()
     dp.include_router(router)
     bots[token] = {"dp": dp, "bot": bot}
-    await bot.set_webhook(url=f"url/webhook?bot_token={token}")
+    await bot.set_webhook(url=f"https://svetlana-backend.onrender.com/webhook?bot_token={token}")

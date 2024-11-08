@@ -27,4 +27,4 @@ async def on_startup():
     dp = Dispatcher()
     bots.bots[config.test_token] = {"dp": dp, "bot": bot}
     dp.include_router(router)
-    await bot.set_webhook('url/webhook?bot_token=' + config.test_token, drop_pending_updates=True)
+    await bot.set_webhook('https://svetlana-backend.onrender.com/webhook?bot_token=' + config.test_token, drop_pending_updates=True)
