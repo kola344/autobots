@@ -28,3 +28,7 @@ async def on_startup():
     bots.bots[config.test_token] = {"dp": dp, "bot": bot}
     dp.include_router(router)
     await bot.set_webhook('https://svetlana-backend.onrender.com/webhook?bot_token=' + config.test_token, drop_pending_updates=True)
+
+if __name__ == '__main__':
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=80)

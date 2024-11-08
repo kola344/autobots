@@ -7,7 +7,7 @@ router = Router()
 @router.message(F.text == '/create')
 async def process_message(message: Message):
     await message.answer("Введите токен")
-    await connecting(message.text)
+    await connecting(message.text, router)
     await message.answer("Создание бота завершено")
 
 @router.message(F.text)

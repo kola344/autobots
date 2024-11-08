@@ -1,7 +1,6 @@
-from router import router
 from aiogram import Bot, Dispatcher
 
-async def connect_bot(token):
+async def connect_bot(token, router):
     bot = Bot(token=token)
     dp = Dispatcher()
     dp.include_router(router)
