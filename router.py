@@ -4,10 +4,10 @@ from bots import connecting
 
 router = Router()
 
-@router.message(F.text == '/create')
+@router.message(F.startswith('/connect'))
 async def process_message(message: Message):
-    await message.answer("Введите токен")
-    await connecting(message.text, router)
+    token = message.text.split()[1]
+    await connecting(token, router)
     await message.answer("Создание бота завершено")
 
 @router.message(F.text)
